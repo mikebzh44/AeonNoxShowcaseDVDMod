@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <!-- MikeBZH44 start : Animation to open current case -->
+    <include name="ShowcaseOpenCase1sec">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" delay="1333" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCase2sec">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" delay="2666" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCase3sec">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" delay="3999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCase4sec">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" delay="4999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCase5sec">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" delay="5999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCaseNoCoverflow">
+        <animation type="conditional" reversible="true" condition="Control.HasFocus(962)">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseCloseCase">
+        <animation type="unfocus" reversible="true" condition="[Control.IsVisible(7550)]">
+            <effect type="rotatey" center="90" start="75" end="0" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCloseCase">
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.1sec)">ShowcaseOpenCase1sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.2sec)">ShowcaseOpenCase2sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.3sec)">ShowcaseOpenCase3sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.4sec)">ShowcaseOpenCase4sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.5sec)">ShowcaseOpenCase5sec</include>
+        <include condition="!Skin.HasSetting(Nox.autoopencase)">ShowcaseOpenCaseNoCoverflow</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase)">ShowcaseCloseCase</include>
+    </include>
+    <include name="ShowcaseOpenCaseCoverflow">
+        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + [Control.IsVisible(197) | Control.IsVisible(198)]">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+        <animation type="conditional" reversible="true" condition="!Skin.HasSetting(Nox.autoopencase) + Control.HasFocus(962)">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <!-- MikeBZH44 end -->
+    <include name="SourceCases">
+        <itemlayout height="525" width="294" condition="[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)">
+            <control type="group">
+                <visible>[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)</visible>
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <control type="image">
+                    <include>MovieShowcaseBackVarsCases</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                    <visible>![Skin.HasSetting(Nox.nosagacase) + SubString(ListItem.Path,videodb://1/7/)]</visible>
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbCases</include>
+                    <texture background="true" diffuse="thumbs/boxes/case_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                </control>
+                <include>MovieShowcaseGlassOverlayCases</include>
+                <control type="image">
+                    <include>MovieShowcaseBackReflectionVarsCases</include>
+                    <texture background="true" flipy="true" fallback="thumbs/boxes/default_case.png" diffuse="thumbs/boxes/movieposter_mask_reflect.png">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                    <visible>![Skin.HasSetting(Nox.nosagacase) + SubString(ListItem.Path,videodb://1/7/)]</visible>
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbReflectionCasesCover</include>
+                    <texture background="true" flipy="true" diffuse="thumbs/boxes/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                </control>
+                <control type="image">
+                    <include>WatchedOverlayShowCaseCases</include>
+                    <include>OverlayVisibility0</include>
+                    <visible>![Skin.HasSetting(Nox.nosagacase) + SubString(ListItem.Path,videodb://1/7/)]</visible>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="525" width="294" condition="[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)">
+            <control type="group">
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <!-- MikeBZH44 start : Display Bluray/3D or DVD background case -->
+                <control type="image">
+                    <include>MovieShowcaseBackVarsCases</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseTypeVar]/back_dvd.png</texture>
+                    <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseBackVarsCases</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseTypeVar]/back_bd.png</texture>
+                    <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
+                </control>
+                <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
+                <control type="image">
+                    <posx>109</posx>
+                    <posy>110</posy>
+                    <width>195</width>
+                    <height>195</height>
+                    <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
+                </control>
+                <control type="image">
+                    <posx>109</posx>
+                    <posy>110</posy>
+                    <width>195</width>
+                    <height>195</height>
+                    <texture background="true" fallback="common/cdart/dvd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
+                </control>
+                <control type="image">
+                    <posx>109</posx>
+                    <posy>110</posy>
+                    <width>195</width>
+                    <height>195</height>
+                    <texture background="true">common/cdart/default.png</texture>
+                    <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
+                </control>
+                <!-- MikeBZH44 end -->
+                <control type="image">
+                    <include>MovieShowcaseBackVarsCases</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbCases</include>
+                    <texture background="true" diffuse="thumbs/boxes/case_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseBackVarsCases</include>
+                    <texture background="true">thumbs/boxes/case_overlay.png</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseBackReflectionVarsCases</include>
+                    <texture background="true" flipy="true" fallback="thumbs/boxes/default_case.png" diffuse="thumbs/boxes/movieposter_mask_reflect.png">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbReflectionMainCases</include>
+                    <texture background="true" flipy="true" diffuse="thumbs/boxes/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>WatchedOverlayShowCaseCases</include>
+                    <include>OverlayVisibility0</include>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+            </control>
+        </focusedlayout>
+        <itemlayout height="525" width="100" condition="![[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)]"></itemlayout>
+        <focusedlayout height="525" width="969" condition="![[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)]"></focusedlayout>
+    </include>
+    <include name="ClearCases">
+        <itemlayout height="525" width="294" condition="[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)">
+            <control type="group">
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <!-- MikeBZH44 start : Display background case -->
+                <control type="image">
+                    <include>MovieShowcaseDVDCoverVars</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseTypeVar]/Back.png</texture>
+                </control>
+                <!-- MikeBZH44 end -->
+                <control type="image">
+                    <include>MovieShowcaseThumbDVD</include>
+                    <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseDVDCoverVars</include>
+                    <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                    <texture background="true">thumbs/boxes/movies/$VAR[GlobalCaseVar]</texture>
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbReflectionDVDCover</include>
+                    <texture background="true" flipy="true" diffuse="thumbs/boxes/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                </control>
+                <!--<include>MovieShowcaseThumbReflectionDVD</include>-->
+                <control type="image">
+                    <posx>74</posx>
+                    <posy>375</posy>
+                    <width>276</width>
+                    <height>180</height>
+                    <colordiffuse>d1FFFFFF</colordiffuse>
+                    <bordertexture>thumbs/boxes/poster_shadow_reflect.png</bordertexture>
+                    <texture flipy="true" background="true">thumbs/boxes/poster_glass_reflect.png</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <include>WatchedOverlayShowCaseDVD</include>
+                    <include>OverlayVisibility0</include>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="525" width="294" condition="[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)">
+            <control type="group">
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <!-- MikeBZH44 start : Display background case -->
+                <control type="image">
+                    <include>MovieShowcaseDVDCoverVars</include>
+                    <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseTypeVar]/Back.png</texture>
+                </control>
+                <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
+                <control type="image">
+                    <posx>122</posx>
+                    <posy>109</posy>
+                    <width>206</width>
+                    <height>206</height>
+                    <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
+                </control>
+                <control type="image">
+                    <posx>122</posx>
+                    <posy>109</posy>
+                    <width>206</width>
+                    <height>206</height>
+                    <texture background="true" fallback="common/cdart/dvd.png">$INFO[Container(504).ListItemNoWrap(0).path,,disc.png]</texture>
+                    <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
+               </control>
+               <control type="image">
+                    <posx>122</posx>
+                    <posy>109</posy>
+                    <width>206</width>
+                    <height>206</height>
+                    <texture background="true">common/cdart/default.png</texture>
+                    <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
+                </control>
+                <!-- MikeBZH44 end -->
+                <control type="image">
+                    <include>MovieShowcaseThumbDVD</include>
+                    <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseDVDCoverVars</include>
+                    <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                    <texture background="true">thumbs/boxes/movies/$VAR[GlobalCaseVar]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <control type="image">
+                    <include>MovieShowcaseThumbReflectionDVDCover</include>
+                    <texture background="true" flipy="true" diffuse="thumbs/boxes/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+                <!-- MikeBZH44 start : Open case -->
+                <control type="image">
+                    <posx>74</posx>
+                    <posy>375</posy>
+                    <width>276</width>
+                    <height>180</height>
+                    <colordiffuse>d1FFFFFF</colordiffuse>
+                    <bordertexture>thumbs/boxes/poster_shadow_reflect.png</bordertexture>
+                    <texture background="true">thumbs/boxes/poster_glass_reflect.png</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
+                    <include>ShowcaseOpenCloseCase</include>
+                </control>
+                <!-- MikeBZH44 end -->
+                <control type="image">
+                    <include>WatchedOverlayShowCaseDVD</include>
+                    <include>OverlayVisibility0</include>
+                    <!-- MikeBZH44 start : Open case -->
+                    <include>ShowcaseOpenCloseCase</include>
+                    <!-- MikeBZH44 end -->
+                </control>
+            </control>
+        </focusedlayout>
+        <itemlayout height="525" width="100" condition="![[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)]"></itemlayout>
+        <focusedlayout height="525" width="969" condition="![[[Skin.HasSetting(Nox.noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(Nox.noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6004)]"></focusedlayout>
+    </include>
+    <include name="contents504list">
+        <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)] + !Container.Content(addons) + !Container.Content(genres) + !Container.Content(years)</visible>
+        <posx>-124</posx>
+        <posy>570</posy>
+        <width>2169</width>
+        <height>525</height>
+        <onleft>504</onleft>
+        <onright>504</onright>
+        <onup>7000</onup>
+        <!-- MikeBZH44 start -->
+        <ondown condition="Skin.HasSetting(Nox.autoopencase) + Control.IsVisible(61)">61</ondown>
+        <ondown condition="Skin.HasSetting(Nox.autoopencase) + !Control.IsVisible(61)">109</ondown>
+        <ondown condition="!Skin.HasSetting(Nox.autoopencase)">962</ondown>
+        <!-- MikeBZH44 end -->
+        <viewtype label="$LOCALIZE[31151]">bigwrap</viewtype>
+        <pagecontrol>61</pagecontrol>
+        <scrolltime tween="quadratic" easing="out">300</scrolltime>
+        <focusposition>3</focusposition>
+        <orientation>horizontal</orientation>
+        <preloaditems>2</preloaditems>
+        <include>Animation_OpenCloseZoom_New</include>
+        <include condition="Skin.HasSetting(Nox.usecases)">SourceCases</include>
+        <include condition="!Skin.HasSetting(Nox.usecases)">ClearCases</include>
+    </include>
+    <include name="scdfixed">
+        <control type="fixedlist" id="504">
+            <include>contents504list</include>
+        </control>
+    </include>
+    <include name="scdwrap">
+        <control type="wraplist" id="504">
+            <include>contents504list</include>
+        </control>
+    </include>
+    <include name="ShowcaseDVD">
+        <control type="group">
+            <visible>Control.IsVisible(504)</visible>
+            <control type="group">
+                <!--<animation effect="slide" end="0,30"  time="400" easing="inout" tween="cubic" condition="Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) | Skin.HasSetting(Nox.showcaseinfoontv) + Container.Content(tvshows) | !Skin.HasSetting(Nox.showcaseextrainfo)">Conditional</animation>-->
+                <include condition="!Skin.HasSetting(Nox.usecases)">ShowcaseMoviesDVD</include>
+                <include condition="Skin.HasSetting(Nox.usecases)">ShowcaseMoviesCases</include>
+            </control>
+            <include condition="!Skin.HasSetting(Nox.showcasewrap)">scdfixed</include>
+            <include condition="Skin.HasSetting(Nox.showcasewrap)">scdwrap</include>
+        </control>
+    </include>
+</includes>
