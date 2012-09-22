@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="MovieShowcaseCDArtDVD">
+        <posx>109</posx>
+        <posy>110</posy>
+        <width>195</width>
+        <height>195</height>
+        <!--<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="true">Conditional</animation>-->
+    </include>
+    <include name="MovieShowcaseCDArtBox">
+        <posx>122</posx>
+        <posy>109</posy>
+        <width>206</width>
+        <height>206</height>
+        <!--<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="true">Conditional</animation>-->
+    </include>
     <include name="WatchedOverlayShowCaseCases">
         <posx>234</posx>
         <posy>52</posy>
@@ -793,26 +807,17 @@
                     </control>
                     <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                     <control type="image">
-                        <posx>109</posx>
-                        <posy>110</posy>
-                        <width>195</width>
-                        <height>195</height>
+                        <include>MovieShowcaseCDArtDVD</include>
                         <texture background="true" fallback="common/cdart/bd.png">$INFO[Container(504).ListItem(0).path,,disc.png]</texture>
                         <visible>stringcompare(Container(504).ListItem(0).VideoResolution,3d) | stringcompare(Container(504).ListItem(0).VideoResolution,720) | stringcompare(Container(504).ListItem(0).VideoResolution,1080)</visible>
                     </control>
                     <control type="image">
-                        <posx>109</posx>
-                        <posy>110</posy>
-                        <width>195</width>
-                        <height>195</height>
+                        <include>MovieShowcaseCDArtDVD</include>
                         <texture background="true" fallback="common/cdart/dvd.png">$INFO[Container(504).ListItem(0).path,,disc.png]</texture>
                         <visible>stringcompare(Container(504).ListItem(0).VideoResolution,480) | stringcompare(Container(504).ListItem(0).VideoResolution,540) | stringcompare(Container(504).ListItem(0).VideoResolution,576)</visible>
                     </control>
                     <control type="image">
-                        <posx>109</posx>
-                        <posy>110</posy>
-                        <width>195</width>
-                        <height>195</height>
+                        <include>MovieShowcaseCDArtDVD</include>
                         <texture background="true">common/cdart/default.png</texture>
                         <visible>![stringcompare(Container(504).ListItem(0).VideoResolution,3d) | stringcompare(Container(504).ListItem(0).VideoResolution,480) | stringcompare(Container(504).ListItem(0).VideoResolution,540) | stringcompare(Container(504).ListItem(0).VideoResolution,576) | stringcompare(Container(504).ListItem(0).VideoResolution,720) | stringcompare(Container(504).ListItem(0).VideoResolution,1080)]</visible>
                     </control>

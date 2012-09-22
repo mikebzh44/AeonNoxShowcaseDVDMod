@@ -101,26 +101,17 @@
                 </control>
                 <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                 <control type="image">
-                    <posx>109</posx>
-                    <posy>110</posy>
-                    <width>195</width>
-                    <height>195</height>
+                    <include>MovieShowcaseCDArtDVD</include>
                     <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
                 </control>
                 <control type="image">
-                    <posx>109</posx>
-                    <posy>110</posy>
-                    <width>195</width>
-                    <height>195</height>
+                    <include>MovieShowcaseCDArtDVD</include>
                     <texture background="true" fallback="common/cdart/dvd.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
                 </control>
                 <control type="image">
-                    <posx>109</posx>
-                    <posy>110</posy>
-                    <width>195</width>
-                    <height>195</height>
+                    <include>MovieShowcaseCDArtDVD</include>
                     <texture background="true">common/cdart/default.png</texture>
                     <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
                 </control>
@@ -223,26 +214,17 @@
                 </control>
                 <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                 <control type="image">
-                    <posx>122</posx>
-                    <posy>109</posy>
-                    <width>206</width>
-                    <height>206</height>
+                    <include>MovieShowcaseCDArtBox</include>
                     <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
                 </control>
                 <control type="image">
-                    <posx>122</posx>
-                    <posy>109</posy>
-                    <width>206</width>
-                    <height>206</height>
+                    <include>MovieShowcaseCDArtBox</include>
                     <texture background="true" fallback="common/cdart/dvd.png">$INFO[Container(504).ListItemNoWrap(0).path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
                </control>
                <control type="image">
-                    <posx>122</posx>
-                    <posy>109</posy>
-                    <width>206</width>
-                    <height>206</height>
+                    <include>MovieShowcaseCDArtBox</include>
                     <texture background="true">common/cdart/default.png</texture>
                     <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
                 </control>
