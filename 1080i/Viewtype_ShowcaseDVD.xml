@@ -1,53 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!-- MikeBZH44 start : Animation to open current case -->
-    <include name="ShowcaseOpenCase1sec">
+    <include name="ShowcaseAutoOpenCase1sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="1333" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="6333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseOpenCase2sec">
+    <include name="ShowcaseAutoOpenCase2sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="2666" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="7666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseOpenCase3sec">
+    <include name="ShowcaseAutoOpenCase3sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="3999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8999" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseOpenCase4sec">
+    <include name="ShowcaseAutoOpenCase4sec">
         <animation type="focus" reversible="false">
-            <effect type="rotatey" delay="4999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="5333" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="10333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseOpenCase5sec">
+    <include name="ShowcaseAutoOpenCase5sec">
         <animation type="focus" reversible="false">
-            <effect type="rotatey" delay="5999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="6666" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="11666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseOpenCaseNoCoverflow">
+    <include name="ShowcaseAutoOpenCaseManual">
+        <animation type="conditional" reversible="false" condition="Control.IsVisible(7550)">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseOpenCaseManual">
         <animation type="conditional" reversible="true" condition="Control.HasFocus(962)">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
     <include name="ShowcaseCloseCase">
-        <animation type="unfocus" reversible="true" condition="[Control.IsVisible(7550)]">
+        <animation type="unfocus" reversible="true" condition="Control.IsVisible(7550)">
             <effect type="rotatey" center="90" start="75" end="0" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
     <include name="ShowcaseOpenCloseCase">
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.1sec)">ShowcaseOpenCase1sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.2sec)">ShowcaseOpenCase2sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.3sec)">ShowcaseOpenCase3sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.4sec)">ShowcaseOpenCase4sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.5sec)">ShowcaseOpenCase5sec</include>
-        <include condition="!Skin.HasSetting(Nox.autoopencase)">ShowcaseOpenCaseNoCoverflow</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase)">ShowcaseCloseCase</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.1sec)">ShowcaseAutoOpenCase1sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.2sec)">ShowcaseAutoOpenCase2sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.3sec)">ShowcaseAutoOpenCase3sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.4sec)">ShowcaseAutoOpenCase4sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.5sec)">ShowcaseAutoOpenCase5sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto)">ShowcaseAutoOpenCaseManual</include>
+        <include condition="!Skin.HasSetting(Nox.autoopencase)">ShowcaseOpenCaseManual</include>
     </include>
     <include name="ShowcaseOpenCaseCoverflow">
-        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + [Control.IsVisible(197) | Control.IsVisible(198)]">
+        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.infopaneoff) + [Control.IsVisible(197) | Control.IsVisible(198)]">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.infopaneoff) + Control.IsVisible(7550)">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
         <animation type="conditional" reversible="true" condition="!Skin.HasSetting(Nox.autoopencase) + Control.HasFocus(962)">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
@@ -101,17 +117,17 @@
                 </control>
                 <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                 <control type="image">
-                    <include>MovieShowcaseCDArtDVD</include>
+                    <include>MovieShowcaseCDArtCase</include>
                     <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
                 </control>
                 <control type="image">
-                    <include>MovieShowcaseCDArtDVD</include>
+                    <include>MovieShowcaseCDArtCase</include>
                     <texture background="true" fallback="common/cdart/dvd.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
                 </control>
                 <control type="image">
-                    <include>MovieShowcaseCDArtDVD</include>
+                    <include>MovieShowcaseCDArtCase</include>
                     <texture background="true">common/cdart/default.png</texture>
                     <visible>![stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
                 </control>

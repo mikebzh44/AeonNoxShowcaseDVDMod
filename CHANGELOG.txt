@@ -1,3 +1,20 @@
+V 1.1 :
+
+There is differents ways to open the current movie case :
+
+1 - When "Auto-open cases" option is ON
+
+Case will open when movie info panel will be displayed so by using the "Infopanel" Option you can :
+
+- delay opening up to 5 seconds ("Infopanel" option set to "delayed").
+- open case when you want (Infopanel" option set to "Manual" so pressing UP to display infopanel will make the case open).
+
+When "Infopanel" is set to "No" or "On", the only way to open case is to set "Auto-open cases" to OFF (see below).
+
+2 - When "Auto-open cases" option is OFF
+
+Press DOWN key to open, UP key to close on current movie case.
+
 V 1.0 :
 - You can open current movie case by pressing DOWN arrow.
 - You can setup options in view settings to open automatically the case
