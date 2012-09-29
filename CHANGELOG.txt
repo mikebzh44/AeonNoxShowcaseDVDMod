@@ -13,11 +13,11 @@ Fix some bugs depending on info panel and case settings.
     1.2.2 Infopanel = MANUAL : case open when press UP to display info panel, CD spin 1 time (5 sec) case stay open 3 sec more and close
     1.2.3 Infopanel = DELAY  : case open when info panel slide (delay is inherit from info panel setting), CD spin 1 time (5 sec) case stay open 3 sec more and close
     1.2.4 Infopanel = OFF    : case stay close
-2 Autoopen = ON
+2 Autoopen = OFF
   2.1 Coveflow = OFF
-    2.1.1 case open when press DOWN, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    2.1.1 case open when press DOWN, CD spin 1 time (5 sec) and stay open. Use UP arrow to close
   2.2 Coveflow = OFF
-    2.2.1 case open when press DOWN, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    2.2.1 case open when press DOWN, CD spin 1 time (5 sec) and stay open. Use UP arrow to close
 
 V 1.1 :
 
