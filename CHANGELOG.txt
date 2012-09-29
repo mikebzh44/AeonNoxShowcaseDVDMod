@@ -1,3 +1,24 @@
+V 1.2 :
+
+Fix some bugs depending on info panel and case settings.
+
+1 Autoopen = ON
+  1.1 Coveflow = OFF
+    1.1.1 Infopanel = ON     : case open immediatly, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.1.2 Infopanel = MANUAL : case open when press UP to display info panel, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.1.3 Infopanel = DELAY  : case open when info panel slide (delay is inherit from info panel setting), CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.1.4 Infopanel = OFF    : case stay close
+  1.2 Coveflow = ON
+    1.2.1 Infopanel = ON     : bug case stay close :(
+    1.2.2 Infopanel = MANUAL : case open when press UP to display info panel, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.2.3 Infopanel = DELAY  : case open when info panel slide (delay is inherit from info panel setting), CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.2.4 Infopanel = OFF    : case stay close
+2 Autoopen = ON
+  2.1 Coveflow = OFF
+    2.1.1 case open when press DOWN, CD spin 1 time (5 sec) case stay open 3 sec more and close
+  2.2 Coveflow = OFF
+    2.2.1 case open when press DOWN, CD spin 1 time (5 sec) case stay open 3 sec more and close
+
 V 1.1 :
 
 There is differents ways to open the current movie case :

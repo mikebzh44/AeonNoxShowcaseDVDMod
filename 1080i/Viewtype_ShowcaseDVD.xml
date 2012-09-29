@@ -1,40 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!-- MikeBZH44 start : Animation to open current case -->
-    <include name="ShowcaseAutoOpenCase1sec">
+    <include name="MovieShowcaseCDArtSpinDown">
+        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="Control.HasFocus(962)">Conditional</animation>
+    </include>
+    <include name="MovieShowcaseCDArtSpinInfoPanel">
+        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="Control.IsVisible(7550)">Conditional</animation>
+    </include>
+    <include name="MovieShowcaseCDArtSpinFocus">
+        <animation type="focus" reversible="false">
+            <effect type="rotate" end="-360" center="auto" time="5000" loop="false"/>
+        </animation>
+    </include>
+    <include name="MovieShowcaseCDArtSpin">
+        <!-- Case open automatically and infopanel set to DELAY -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.1sec)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.2sec)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.3sec)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.4sec)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.5sec)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <!-- Case open automatically and infopanel set to ON -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon)">MovieShowcaseCDArtSpinFocus</include>
+        <!-- Case open automatically and infopanel set to MANUAL -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.showcaseinfoon)">MovieShowcaseCDArtSpinInfoPanel</include>
+        <!-- Case open manually -->
+        <include condition="!Skin.HasSetting(Nox.autoopencase)">MovieShowcaseCDArtSpinDown</include>
+    </include>
+    <include name="MovieShowcaseCDArtCase">
+        <posx>109</posx>
+        <posy>110</posy>
+        <width>195</width>
+        <height>195</height>
+        <include>MovieShowcaseCDArtSpin</include>
+    </include>
+    <include name="MovieShowcaseCDArtBox">
+        <posx>122</posx>
+        <posy>109</posy>
+        <width>206</width>
+        <height>206</height>
+        <include>MovieShowcaseCDArtSpin</include>
+    </include>
+    <include name="ShowcaseAutoOpenCaseInfoPanel1sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="1333" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="6333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="9333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseAutoOpenCase2sec">
+    <include name="ShowcaseAutoOpenCaseInfoPanel2sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="2666" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="7666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="10666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseAutoOpenCase3sec">
+    <include name="ShowcaseAutoOpenCaseInfoPanel3sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="3999" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="8999" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="11999" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseAutoOpenCase4sec">
+    <include name="ShowcaseAutoOpenCaseInfoPanel4sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="5333" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="10333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="13333" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
-    <include name="ShowcaseAutoOpenCase5sec">
+    <include name="ShowcaseAutoOpenCaseInfoPanel5sec">
         <animation type="focus" reversible="false">
             <effect type="rotatey" delay="6666" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="11666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="14666" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <include name="ShowcaseAutoOpenCaseInfoPanelON">
+        <animation type="focus" reversible="false">
+            <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
     <include name="ShowcaseAutoOpenCaseManual">
         <animation type="conditional" reversible="false" condition="Control.IsVisible(7550)">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
     </include>
     <include name="ShowcaseOpenCaseManual">
@@ -48,22 +93,27 @@
         </animation>
     </include>
     <include name="ShowcaseOpenCloseCase">
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.1sec)">ShowcaseAutoOpenCase1sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.2sec)">ShowcaseAutoOpenCase2sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.3sec)">ShowcaseAutoOpenCase3sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.4sec)">ShowcaseAutoOpenCase4sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.5sec)">ShowcaseAutoOpenCase5sec</include>
-        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto)">ShowcaseAutoOpenCaseManual</include>
+        <!-- Case open automatically and infopanel set to DELAY -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.1sec)">ShowcaseAutoOpenCaseInfoPanel1sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.2sec)">ShowcaseAutoOpenCaseInfoPanel2sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.3sec)">ShowcaseAutoOpenCaseInfoPanel3sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.4sec)">ShowcaseAutoOpenCaseInfoPanel4sec</include>
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon) + Skin.HasSetting(Nox.5sec)">ShowcaseAutoOpenCaseInfoPanel5sec</include>
+        <!-- Case open automatically and infopanel set to ON -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + !Skin.HasSetting(Nox.infopaneauto) + Skin.HasSetting(Nox.showcaseinfoon)">ShowcaseAutoOpenCaseInfoPanelON</include>
+        <!-- Case open automatically and infopanel set to MANUAL -->
+        <include condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneoff) + !Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.showcaseinfoon)">ShowcaseAutoOpenCaseManual</include>
+        <!-- Case open manually -->
         <include condition="!Skin.HasSetting(Nox.autoopencase)">ShowcaseOpenCaseManual</include>
     </include>
     <include name="ShowcaseOpenCaseCoverflow">
         <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.infopaneoff) + [Control.IsVisible(197) | Control.IsVisible(198)]">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
         <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + !Skin.HasSetting(Nox.infopaneauto) + !Skin.HasSetting(Nox.infopaneoff) + Control.IsVisible(7550)">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
-            <effect type="rotatey" delay="5000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="90" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
         </animation>
         <animation type="conditional" reversible="true" condition="!Skin.HasSetting(Nox.autoopencase) + Control.HasFocus(962)">
             <effect type="rotatey" center="90" start="0" end="75" time="1000" tween="quadratic" easing="out"/>

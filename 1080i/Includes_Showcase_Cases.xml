@@ -1,23 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="MovieShowcaseCDArtSpin">
-        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="!Skin.HasSetting(Nox.autoopencase) + Control.HasFocus(962)">Conditional</animation>
-        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="Skin.HasSetting(Nox.autoopencase) + Control.IsVisible(7550)">Conditional</animation>
-    </include>
-    <include name="MovieShowcaseCDArtCase">
-        <posx>109</posx>
-        <posy>110</posy>
-        <width>195</width>
-        <height>195</height>
-        <include>MovieShowcaseCDArtSpin</include>
-    </include>
-    <include name="MovieShowcaseCDArtBox">
-        <posx>122</posx>
-        <posy>109</posy>
-        <width>206</width>
-        <height>206</height>
-        <include>MovieShowcaseCDArtSpin</include>
-    </include>
     <include name="WatchedOverlayShowCaseCases">
         <posx>234</posx>
         <posy>52</posy>
