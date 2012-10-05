@@ -385,14 +385,24 @@
                 <selected>Skin.HasSetting(Nox.usecases)</selected>
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),showcasedvd)</visible>
             </control>
+            <!-- MikeBZH44 Start : Add 2 new options -->
             <control type="radiobutton" id="1647">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[31249]</label>
-                <onclick>Skin.ToggleSetting(Nox.autoopencase)</onclick>
+                <onclick>Skin.ToggleSetting(Nox.DVDAutoOpenCase)</onclick>
                 <include>ReloadWindowOnClick</include>
-                <selected>Skin.HasSetting(Nox.autoopencase)</selected>
+                <selected>Skin.HasSetting(Nox.DVDAutoOpenCase)</selected>
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),showcasedvd)</visible>
             </control>
+            <control type="radiobutton" id="1651">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31250]</label>
+                <onclick>Skin.ToggleSetting(Nox.nocaseformovieset)</onclick>
+                <include>ReloadWindowOnClick</include>
+                <selected>Skin.HasSetting(Nox.nocaseformovieset)</selected>
+                <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),showcasedvd)</visible>
+            </control>
+            <!-- MikeBZH44 End -->
             <!--LowList Options-->
             <control type="radiobutton" id="1630">
                 <include>Objects_MediaMenuButtonAlt2</include>
