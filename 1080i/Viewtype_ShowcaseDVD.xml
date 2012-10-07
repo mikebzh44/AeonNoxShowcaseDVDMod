@@ -192,13 +192,13 @@
                 <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                 <control type="image">
                     <include>MovieShowcaseCDArtCase</include>
-                    <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <texture background="true" fallback="common/cdart/bd_logo.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)</visible>
                     <visible>![Skin.HasSetting(Nox.NoCaseForMovieset) + SubString(ListItem.Path,videodb://1/7/)]</visible>
                 </control>
                 <control type="image">
                     <include>MovieShowcaseCDArtCase</include>
-                    <texture background="true" fallback="common/cdart/dvd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <texture background="true" fallback="common/cdart/dvd_logo.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)</visible>
                     <visible>![Skin.HasSetting(Nox.NoCaseForMovieset) + SubString(ListItem.Path,videodb://1/7/)]</visible>
                 </control>
@@ -357,12 +357,12 @@
                 <!-- MikeBZH44 start : Display Movie disc / Bluray disc / DVD disc / Default disc -->
                 <control type="image">
                     <include>MovieShowcaseCDArtBox</include>
-                    <texture background="true" fallback="common/cdart/bd.png">$INFO[ListItem.path,,disc.png]</texture>
+                    <texture background="true" fallback="common/cdart/bd_logo.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>![Skin.HasSetting(Nox.NoCaseForMovieset) + SubString(ListItem.Path,videodb://1/7/)] + [stringcompare(ListItem.VideoResolution,3d) | stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)]</visible>
                 </control>
                 <control type="image">
                     <include>MovieShowcaseCDArtBox</include>
-                    <texture background="true" fallback="common/cdart/dvd.png">$INFO[Container(504).ListItemNoWrap(0).path,,disc.png]</texture>
+                    <texture background="true" fallback="common/cdart/dvd_logo.png">$INFO[ListItem.path,,disc.png]</texture>
                     <visible>![Skin.HasSetting(Nox.NoCaseForMovieset) + SubString(ListItem.Path,videodb://1/7/)] + [stringcompare(ListItem.VideoResolution,480) | stringcompare(ListItem.VideoResolution,540) | stringcompare(ListItem.VideoResolution,576)]</visible>
                </control>
                <control type="image">
