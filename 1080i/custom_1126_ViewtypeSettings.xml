@@ -695,6 +695,26 @@
                 <selected>Skin.HasSetting(Nox.noflowalbumdvd)</selected>
                 <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)] + stringcompare(Skin.String(Nox.actualViewtype),showcasecd)</visible>
             </control>
+            <!-- MikeBZH44 start : Add new option to use CD case instead of CD clearcase -->
+            <control type="radiobutton" id="1680">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31256]</label>
+                <onclick>Skin.ToggleSetting(Nox.UseCDCase)</onclick>
+                <selected>Skin.HasSetting(Nox.UseCDCase)</selected>
+                <include>ReloadWindowOnClick</include>
+                <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)] + stringcompare(Skin.String(Nox.actualViewtype),showcasecd)</visible>
+            </control>
+            <!-- MikeBZH44 end -->
+            <!-- MikeBZH44 start : Add new option to auto open CD case -->
+            <control type="radiobutton" id="1681">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31249]</label>
+                <onclick>Skin.ToggleSetting(Nox.CDAutoOpenCase)</onclick>
+                <include>ReloadWindowOnClick</include>
+                <selected>Skin.HasSetting(Nox.CDAutoOpenCase)</selected>
+                <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)] + stringcompare(Skin.String(Nox.actualViewtype),showcasecd) + !Skin.HasSetting(Nox.noflowalbumdvd)</visible>
+            </control>
+            <!-- MikeBZH44 end -->
             <control type="radiobutton" id="1660">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[31170]</label>

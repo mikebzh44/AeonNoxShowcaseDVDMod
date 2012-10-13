@@ -287,6 +287,7 @@
     <string id="31630">Custom</string>
     <string id="31631">Geef 'logo.png' weer ipv titel</string>
     <string id="31633">QuickNav</string>
+    <string id="31256">CD Case</string>
     
 	<!-- Home Menu -->
     <string id="31500">FOTOS</string>
@@ -548,8 +549,7 @@
     <string id="42293">Hoe de aarde er nu uitziet</string>
     <string id="42294">Hoe de maan er nu uitziet</string>
     <string id="42300">Set custom background image</string>
-    <string id="42301">Use DVD/BD case instead of clear ones</string>
-
+    <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
 	
 	
 

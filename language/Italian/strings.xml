@@ -261,6 +261,7 @@
     <string id="31630">Personalizzato</string>
     <string id="31631">Mostra Logo.png invece del titolo</string>
     <string id="31633">Navigazione Veloce</string>
+    <string id="31256">CD Case</string>
     <string id="31500">IMMAGINI</string>
     <string id="31501">MUSICA</string>
     <string id="31502">FILM</string>
@@ -496,6 +497,6 @@
     <string id="42291">Cartelle</string>
     <string id="42292">Categorie</string>
     <string id="42300">Set custom background image</string>
-    <string id="42301">Use DVD/BD case instead of clear ones</string>
+    <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
 
 </strings>

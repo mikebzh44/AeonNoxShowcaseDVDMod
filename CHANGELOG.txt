@@ -1,3 +1,22 @@
+V 1.5 :
+
+Add the possibility to switch between clear and CD cases for Live CD Background
+Add the possibility to open CD case to display CD art
+
+1 Autoopen = ON
+  1.1 Coveflow = OFF
+    DON'T WORK AS IT'S NOT POSSIBLE TO DISPLAY CD ART WITHOUT REWRITING COMPLETLY THE VIEW
+  1.2 Coveflow = ON
+    1.2.1 Infopanel = ON     : bug case stay close :(
+    1.2.2 Infopanel = MANUAL : case open when press UP to display info panel, CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.2.3 Infopanel = DELAY  : case open when info panel slide (delay is inherit from info panel setting), CD spin 1 time (5 sec) case stay open 3 sec more and close
+    1.2.4 Infopanel = OFF    : case stay close
+2 Autoopen = OFF
+  2.1 Coveflow = OFF
+    DON'T WORK AS IT'S NOT POSSIBLE TO DISPLAY CD ART WITHOUT REWRITING COMPLETLY THE VIEW
+  2.2 Coveflow = ON
+    2.2.1 case open when press DOWN, CD spin 1 time (5 sec) and stay open. Use UP arrow to close
+
 V 1.4 :
 
 Add the possibility to switch between clear and DVD/BD cases for Live DVD Background
@@ -25,7 +44,7 @@ Fix some bugs depending on info panel and case settings.
 2 Autoopen = OFF
   2.1 Coveflow = OFF
     2.1.1 case open when press DOWN, CD spin 1 time (5 sec) and stay open. Use UP arrow to close
-  2.2 Coveflow = OFF
+  2.2 Coveflow = ON
     2.2.1 case open when press DOWN, CD spin 1 time (5 sec) and stay open. Use UP arrow to close
 
 V 1.1 :

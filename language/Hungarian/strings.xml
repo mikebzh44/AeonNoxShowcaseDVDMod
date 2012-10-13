@@ -274,6 +274,8 @@
 	<string id="31630">Egyéni</string>
 	<string id="31631">Logo mutatása cím helyett</string>
 	<string id="31633">Gyors Nav.</string>
+   <string id="31256">CD Case</string>
+
 	<!-- Főmenü -->
 	<string id="31500">Képek</string>
 	<string id="31501">Zenék</string>
@@ -515,5 +517,5 @@
 	<string id="42291">Mappák</string>
 	<string id="42292">Kategóriák</string>
    <string id="42300">Set custom background image</string>
-   <string id="42301">Use DVD/BD case instead of clear ones</string>
+   <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
 </strings>

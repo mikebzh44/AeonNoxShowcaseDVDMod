@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <!-- MikeBZH44 start : Animation to open current case -->
+    <include name="MusicShowcaseCDArtSpinDown">
+        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="Control.HasFocus(962)">Conditional</animation>
+    </include>
+    <include name="MusicShowcaseCDArtSpinInfoPanel">
+        <animation effect="rotate" end="-360" center="auto" time="5000" loop="false" reversible="false" condition="Control.IsVisible(7679)">Conditional</animation>
+    </include>
+    <include name="MusicShowcaseCDArtSpin">
+        <!-- Case open automatically and infopanel set to DELAY or MANUAL -->
+        <include condition="Skin.HasSetting(Nox.CDAutoOpenCase)">MusicShowcaseCDArtSpinInfoPanel</include>
+        <!-- Case open manually -->
+        <include condition="!Skin.HasSetting(Nox.CDAutoOpenCase)">MusicShowcaseCDArtSpinDown</include>
+    </include>
+    <include name="MusicShowcaseDiscCD">
+        <posx>96</posx>
+        <posy>82</posy>
+        <width>274</width>
+        <height>274</height>
+        <include>MusicShowcaseCDArtSpin</include>
+        <texture background="true" fallback="common/cdart/default.png">$VAR[cdARTVar]</texture>
+    </include>
+    <include name="ShowcaseCDOpenCaseCoverflow">
+        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.CDAutoOpenCase) + Skin.HasSetting(Nox.infopaneautomusic) + !Skin.HasSetting(Nox.infopaneoff) + [Control.IsVisible(199)]">
+            <effect type="rotatey" center="45" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="45" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+        <animation type="conditional" reversible="false" condition="Skin.HasSetting(Nox.CDAutoOpenCase) + !Skin.HasSetting(Nox.infopaneautomusic) + !Skin.HasSetting(Nox.infopaneoff) + Control.IsVisible(7679)">
+            <effect type="rotatey" center="45" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+            <effect type="rotatey" delay="8000" center="45" start="0" end="-75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+        <animation type="conditional" reversible="true" condition="!Skin.HasSetting(Nox.CDAutoOpenCase) + Control.HasFocus(972)">
+            <effect type="rotatey" center="45" start="0" end="75" time="1000" tween="quadratic" easing="out"/>
+        </animation>
+    </include>
+    <!-- MikeBZH44 end -->
+    <include name="contents513list">
+        <visible>Container.Content(albums) | Container.Content(songs) | Window.IsActive(musicfiles)</visible>
+        <posx>-378</posx>
+        <posy>580</posy>
+        <width>2655</width>
+        <height>525</height>
+        <onleft>513</onleft>
+        <onright>513</onright>
+        <onup>7000</onup>
+        <!-- MikeBZH44 start -->
+        <ondown condition="Skin.HasSetting(Nox.CDAutoOpenCase) + Control.IsVisible(61)">61</ondown>
+        <ondown condition="Skin.HasSetting(Nox.CDAutoOpenCase) + !Control.IsVisible(61)">109</ondown>
+        <ondown condition="!Skin.HasSetting(Nox.CDAutoOpenCase)">972</ondown>
+        <!-- MikeBZH44 end -->
+        <viewtype label="$LOCALIZE[31152]">bigwrap</viewtype>
+        <pagecontrol>61</pagecontrol>
+        <scrolltime>200</scrolltime>
+        <focusposition>3</focusposition>
+        <orientation>horizontal</orientation>
+        <preloaditems>2</preloaditems>
+        <include>Animation_OpenCloseZoom_New</include>
+        <itemlayout height="525" width="375">
+            <control type="group">
+                <visible>Skin.HasSetting(Nox.noflowalbumdvd) + !Control.IsVisible(7004)</visible>
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <include condition="Window.IsActive(pictures)">MusicShowcaseBlackDVD</include>
+                <control type="image">
+                    <include>MusicShowcaseThumbDVD</include>
+                    <info>ListItem.Icon</info>
+                </control>
+                <control type="image">
+                    <include>MusicShowcaseGlassOverlayAngledCD</include>
+                </control>
+                <include condition="Window.IsActive(pictures)">MusicShowcaseBlackReflectionDVD</include>
+                <control type="image">
+                    <include>MusicShowcaseThumbReflectionDVD</include>
+                    <info>ListItem.Icon</info>
+                </control>
+                <control type="image">
+                    <include>MusicShowcaseThumbReflectionCD</include>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="525" width="375">
+            <control type="group">
+                <visible>Skin.HasSetting(Nox.noflowalbumdvd) + !Control.IsVisible(7004)</visible>
+                <animation effect="fade" time="0" delay="800">Visible</animation>
+                <include condition="Window.IsActive(pictures)">MusicShowcaseBlackDVD</include>
+                <control type="image">
+                    <include>MusicShowcaseThumbDVD</include>
+                    <info>ListItem.Icon</info>
+                </control>
+                <control type="image">
+                    <include>MusicShowcaseGlassOverlayAngledCD</include>
+                </control>
+                <include condition="Window.IsActive(pictures)">MusicShowcaseBlackReflectionDVD</include>
+                <control type="image">
+                    <include>MusicShowcaseThumbReflectionDVD</include>
+                    <info>ListItem.Icon</info>
+                </control>
+                <control type="image">
+                    <include>MusicShowcaseThumbReflectionCD</include>
+                </control>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="sccfixed">
+        <control type="fixedlist" id="513">
+            <include>contents513list</include>
+        </control>
+    </include>
+    <include name="sccwrap">
+        <control type="wraplist" id="513">
+            <include>contents513list</include>
+        </control>
+    </include>
+    <include name="ShowcaseCD">
+        <control type="group">
+            <visible>Control.IsVisible(513)</visible>
+            <include>ShowcaseSquareDVD</include>
+            <include condition="!Skin.HasSetting(Nox.showcasewrap)">sccfixed</include>
+            <include condition="Skin.HasSetting(Nox.showcasewrap)">sccwrap</include>
+        </control>
+    </include>
+</includes>

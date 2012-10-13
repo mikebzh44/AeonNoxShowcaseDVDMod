@@ -155,6 +155,7 @@
   <string id="31249">Ouverture automatique des boîtiers</string>
   <string id="31250">Pas de boîtier pour les sagas</string>
   <string id="31255">Disque Blu-Ray</string>
+  <string id="31256">Boîtier CD</string>
   <string id="31257">Détails</string>
   <string id="31258">condensé</string>
   <string id="31265">Petite boîte de dialogues</string>
@@ -468,7 +469,7 @@
   <string id="42285">Options zones spécifiques</string>
   <string id="42286">Rechercher la bande-annonce sur Youtube</string>
   <string id="42300">Définir l'image de fond personnalisée</string>
-  <string id="42301">Utiliser les boîtiers DVD/BD plutôt que les transparents</string>
+  <string id="42301">Utiliser les boîtiers DVD/BD/CD plutôt que les transparents</string>
   <string id="51506">Groupes disponibles</string>
   <string id="51510">Réglage de la minuterie</string>
   <string id="52000">Chaîne +</string>

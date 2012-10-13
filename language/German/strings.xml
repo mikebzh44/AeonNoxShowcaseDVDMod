@@ -222,8 +222,8 @@
   <string id="31242">Flags zeigen</string>
   <string id="31248">BD/DVD Cases</string>
   <string id="31249">Auto-open cases</string>
-  <string id="31251">Set custom background image</string>
-  <string id="31252">Use DVD/BD case instead of clear ones</string>
+    <string id="42300">Set custom background image</string>
+    <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
   <string id="31250">No case for movieset</string>
   <string id="31257">Details</string>
   <string id="31258">Übersicht</string>
@@ -283,7 +283,8 @@
   <string id="31629">Alle Videos</string>
   <string id="31630">Benutzerdef.</string>
   <string id="31631">Logo.png anstatt Titel zeigen</string>
-    <string id="31633">QuickNav</string>
+  <string id="31633">QuickNav</string>
+  <string id="31256">CD Case</string>
 
     
   <!-- Home Menu -->

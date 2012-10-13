@@ -279,6 +279,7 @@
 	<string id="31630">사용자 설정</string>
 	<string id="31631">제목 대신 Logo.png 보기</string>
 	<string id="31633">빠른 이동</string>
+    <string id="31256">CD Case</string>
 
 	<!-- Home Menu -->
 	<string id="31500">사진</string>
@@ -519,5 +520,5 @@
     <string id="42281">Click on buttons to customize them</string>
     <string id="42282">"뒤로가기" 버튼을 눌러 위젯 숨기기 기능 사용하지 않음"</string>
     <string id="42300">Set custom background image</string>
-    <string id="42301">Use DVD/BD case instead of clear ones</string>
+    <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
 </strings>

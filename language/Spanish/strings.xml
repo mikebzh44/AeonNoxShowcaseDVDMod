@@ -279,7 +279,8 @@
     <string id="31629">Todos los Videos</string>
     <string id="31630">Personalizado</string>
     <string id="31631">Mostrar logo.png en lugar de título</string>
-	<string id="31633">Menu Rapido</string>
+	 <string id="31633">Menu Rapido</string>
+    <string id="31256">CD Case</string>
   
     <!-- Home Menu -->
     <string id="31500">IMAGENES</string>
@@ -529,6 +530,6 @@
 	<string id="42290">Colecciones</string>
 	<string id="42291">Carpetas</string>
 	<string id="42292">Categorías</string>
-    <string id="42300">Set custom background image</string>
-    <string id="42301">Use DVD/BD case instead of clear ones</string>
+   <string id="42300">Set custom background image</string>
+   <string id="42301">Use DVD/BD/CD case rather than clear ones</string>
 </strings>

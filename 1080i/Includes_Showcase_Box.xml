@@ -13,11 +13,47 @@
     <include name="MusicCoverMaskReflectionBlackCD">
         <texture background="true" flipy="true" diffuse="thumbs/boxes/cdcover_mask_reflect.png">common/black.png</texture>
     </include>
-    <include name="ShowcaseMusicCoverCD">
+    <!-- MikeBZH44 start : CD case -->
+    <include name="ShowcaseMusicCoverCDCase">
+        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+        <visible>!Container.Content(genres)</visible>
+    </include>
+    <!-- MikeBZH44 end -->
+    <include name="ShowcaseMusicCoverCDClear">
         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
         <texture background="true">thumbs/boxes/cd_glass.png</texture>
         <visible>!Container.Content(genres)</visible>
     </include>
+    <!-- MikeBZH44 start : Back CD case -->
+    <include name="MusicShowcaseBackCDCase">
+        <texture background="true">thumbs/boxes/cd_box_background.png</texture>
+        <visible>!Container.Content(genres)</visible>
+    </include>
+    <include name="MusicShowcaseBackCDClear">
+        <texture background="true">thumbs/boxes/cd_shadow_light.png</texture>
+        <visible>!Container.Content(genres)</visible>
+    </include>
+    <!-- MikeBZH44 end -->
+    <!-- MikeBZH44 start : Back CD -->
+    <include name="MusicShowcaseBackCD">
+        <include>MusicShowcaseThumbDimensionsCD</include>
+        <include condition="Skin.hasSetting(Nox.UseCDCase)">MusicShowcaseBackCDCase</include>
+        <include condition="!Skin.hasSetting(Nox.UseCDCase)">MusicShowcaseBackCDClear</include>
+    </include>
+    <!-- MikeBZH44 end -->
+    <!-- MikeBZH44 start : Front CD case -->
+    <include name="MusicShowcaseFrontCDCase">
+        <texture background="true">thumbs/boxes/cd_box_foreground.png</texture>
+        <visible>!Container.Content(genres)</visible>
+    </include>
+    <!-- MikeBZH44 end -->
+    <!-- MikeBZH44 start : Front CD -->
+    <include name="MusicShowcaseFrontCD">
+        <include>MusicShowcaseThumbDimensionsCD</include>
+        <include condition="Skin.hasSetting(Nox.UseCDCase)">MusicShowcaseFrontCDCase</include>
+        <include condition="!Skin.hasSetting(Nox.UseCDCase)">ShowcaseMusicCoverCDClear</include>
+    </include>
+    <!-- MikeBZH44 end -->
     <!-- Case Dimensions -->
     <include name="MusicShowcaseThumbDimensionsCD">
         <posx>27</posx>
@@ -26,18 +62,34 @@
         <height>342</height>
     </include>
     <!-- Cover Dimensions -->
-    <include name="MusicShowcaseThumbDimensionsCDCover">
+    <include name="MusicShowcaseThumbDimensionsCDClearCover">
         <posx>82</posx>
         <posy>69</posy>
         <width>298</width>
         <height>298</height>
     </include>
-    <include name="MusicShowcaseThumbReflectionDimensionsCDCover">
+    <!-- MikeBZH44 start : Thumb dimensions for CD case -->
+    <include name="MusicShowcaseThumbDimensionsCDCaseCover">
+        <posx>74</posx>
+        <posy>65</posy>
+        <width>305</width>
+        <height>302</height>
+    </include>
+    <!-- MikeBZH44 end -->
+    <include name="MusicShowcaseThumbReflectionDimensionsCDClearCover">
         <posx>82</posx>
         <posy>392</posy>
         <width>298</width>
         <height>298</height>
     </include>
+    <!-- MikeBZH44 start : Thumb reflection dimensions for CD case -->
+    <include name="MusicShowcaseThumbReflectionDimensionsCDCaseCover">
+        <posx>74</posx>
+        <posy>392</posy>
+        <width>305</width>
+        <height>302</height>
+    </include>
+    <!-- MikeBZH44 end -->
     <include name="WatchedOverlayShowCaseDVD">
         <posx>246</posx>
         <posy>42</posy>
@@ -1045,33 +1097,38 @@
         <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
     <include name="MusicShowcaseThumbDVD">
-        <include>MusicShowcaseThumbDimensionsCDCover</include>
+        <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDClearCover</include>
+        <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDCaseCover</include>
         <include>MusicCoverMaskCD</include>
         <include>MusicShowcaseThumbAspectRatio</include>
         <visible>!Container.Content(genres)</visible>
     </include>
     <include name="MusicShowcaseBlackDVD">
         <control type="image">
-            <include>MusicShowcaseThumbDimensionsCDCover</include>
+            <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDClearCover</include>
+            <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDCaseCover</include>
             <include>MusicCoverMaskBlackCD</include>
         </control>
     </include>
     <include name="MusicShowcaseBlackReflectionDVD">
         <control type="image">
-            <include>MusicShowcaseThumbDimensionsCDCover</include>
+            <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDClearCover</include>
+            <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDCaseCover</include>
             <colordiffuse>d1FFFFFF</colordiffuse>
             <include>MusicCoverMaskReflectionBlackCD</include>
             <animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
         </control>
     </include>
     <include name="MusicShowcaseThumbMainDVD">
-        <include>MusicShowcaseThumbDimensionsCDCover</include>
+        <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDClearCover</include>
+        <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbDimensionsCDCaseCover</include>
         <include>MusicCoverMaskCD</include>
         <include>MusicShowcaseThumbAspectRatio</include>
         <visible>!Container.Content(genres)</visible>
     </include>
     <include name="MusicShowcaseThumbReflectionDVD">
-        <include>MusicShowcaseThumbReflectionDimensionsCDCover</include>
+        <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbReflectionDimensionsCDClearCover</include>
+        <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbReflectionDimensionsCDCaseCover</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
         <include>MusicCoverMaskReflectionCD</include>
         <include>MusicShowcaseThumbAspectRatio</include>
@@ -1079,7 +1136,8 @@
         <visible>!Container.Content(genres)</visible>
     </include>
     <include name="MusicShowcaseThumbReflectionMainDVD">
-        <include>MusicShowcaseThumbReflectionDimensionsCDCover</include>
+        <include condition="!Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbReflectionDimensionsCDClearCover</include>
+        <include condition="Skin.HasSetting(Nox.UseCDCase)">MusicShowcaseThumbReflectionDimensionsCDCaseCover</include>
         <colordiffuse>52FFFFFF</colordiffuse>
         <include>MusicCoverMaskReflectionCD</include>
         <include>MusicShowcaseThumbAspectRatio</include>
@@ -1100,8 +1158,18 @@
     </include>
     <include name="MusicShowcaseGlassOverlayAngledCD">
         <include>MusicShowcaseThumbDimensionsCD</include>
-        <include>ShowcaseMusicCoverCD</include>
+        <!-- MikeBZH44 start : Display Clearcase or CDcase -->
+        <include condition="Skin.hasSetting(Nox.UseCDCase)">ShowcaseMusicCoverCDCase</include>
+        <include condition="!Skin.hasSetting(Nox.UseCDCase)">ShowcaseMusicCoverCDClear</include>
+        <!-- MikeBZH44 end -->
     </include>
+    <!-- MikeBZH44 start : Display Clearcase or CDcase -->
+    <include name="MusicShowcaseBackgroundCD">
+        <include>MusicShowcaseThumbDimensionsCD</include>
+        <include condition="Skin.hasSetting(Nox.UseCDCase)">ShowcaseMusicBackgroundCDCase</include>
+        <include condition="!Skin.hasSetting(Nox.UseCDCase)">ShowcaseMusicBackgroundCD</include>
+    </include>
+    <!-- MikeBZH44 end -->
     <include name="CDCaseItem-6">
         <control type="group">
             <visible>!IsEmpty(Container(513).ListItemNoWrap(-6).label) | Skin.HasSetting(Nox.showcasewrap)</visible>
@@ -1538,6 +1606,18 @@
                 <visible>!Skin.HasSetting(Nox.noflowalbumdvd)</visible>
                 <animation effect="fade" start="100" end="0" time="800">Hidden</animation>
             </control>
+            <!-- MikeBZH44 start : hidden button to trap UP or DOWN arrow to open/close case -->
+            <control type="button" id="972">
+                <onup>50</onup>
+                <onleft>50</onleft>
+                <ononright>50</ononright>
+                <ondown condition="Control.IsVisible(61)">61</ondown>
+                <ondown condition="!Control.IsVisible(61)">109</ondown>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <animation effect="fade" start="100" end="0" time="800">Hidden</animation>
+            </control>
+            <!-- MikeBZH44 end -->
             <control type="group" id="7004">
                 <posy>580</posy>
                 <camera x="960" y="810" />
@@ -1665,20 +1745,40 @@
                     <control type="group">
                         <visible>!IsEmpty(Container(513).ListItemNoWrap(0).label) | Skin.HasSetting(Nox.showcasewrap)</visible>
                         <include condition="Window.IsActive(pictures)">MusicShowcaseBlackDVD</include>
+                        <!-- MikeBZH44 start : Background case -->
+                        <control type="image">
+                            <include>MusicShowcaseBackCD</include>
+                        </control>
+                        <control type="image">
+                            <include>MusicShowcaseDiscCD</include>
+                        </control>
+                        <!-- MikeBZH44 end -->
                         <control type="image">
                             <include>MusicShowcaseThumbMainDVD</include>
                             <info>Container(513).ListItem(0).Icon</info>
+                            <!-- MikeBZH44 start : Open case -->
+                            <include>ShowcaseCDOpenCaseCoverflow</include>
+                            <!-- MikeBZH44 end -->
                         </control>
+                        <!-- MikeBZH44 start : Open case -->
                         <control type="image">
-                            <include>MusicShowcaseGlassOverlayAngledCD</include>
+                            <include>MusicShowcaseFrontCD</include>
+                            <include>ShowcaseCDOpenCaseCoverflow</include>
                         </control>
+                        <!-- MikeBZH44 end -->
                         <control type="image">
                             <include>MusicShowcaseThumbReflectionMainDVD</include>
                             <info>Container(513).ListItem(0).Icon</info>
+                            <!-- MikeBZH44 start : Open case -->
+                            <include>ShowcaseCDOpenCaseCoverflow</include>
+                            <!-- MikeBZH44 end -->
                         </control>
                         <include condition="Window.IsActive(pictures)">MusicShowcaseBlackReflectionDVD</include>
                         <control type="image">
                             <include>MusicShowcaseThumbReflectionCD</include>
+                            <!-- MikeBZH44 start : Open case -->
+                            <include>ShowcaseCDOpenCaseCoverflow</include>
+                            <!-- MikeBZH44 end -->
                         </control>
                     </control>
                 </control>
